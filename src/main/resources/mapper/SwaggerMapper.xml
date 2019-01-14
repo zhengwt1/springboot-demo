@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo6.swagger.SwaggerMapper">
+    <insert id="insertSelectiveMapper" parameterType="testSwagger">
+        insert into testswagger(id,name,age,sex,address,birthday,money)
+        values (#{id},#{name},#{age},#{sex},#{address},#{birthday},#{money})
+    </insert>
+    <update id="updateTestSwagger" parameterType="testSwagger">
+          update testswagger set name=#{name},age=#{age},sex=#{sex},address=#{address},birthday=#{birthday},money=#{money}
+          where id=#{id}
+    </update>
+    <select id="selectPage" resultType="com.example.demo6.swagger.TestSwagger">
+        select * from testswagger
+    </select>
+</mapper>

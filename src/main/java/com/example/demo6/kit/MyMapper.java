@@ -1,0 +1,16 @@
+package com.example.demo6.kit;
+
+import tk.mybatis.mapper.annotation.RegisterMapper;
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
+
+/**
+ * @author 张攀钦
+ * @date 2018/12/30-16:35
+ * 通用mapper
+ */
+@RegisterMapper
+public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
+    //TODO
+    //FIXME 特别注意，该接口不能被扫描到，否则会出错
+}
