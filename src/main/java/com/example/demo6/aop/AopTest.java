@@ -50,4 +50,25 @@ public class AopTest {
         System.out.println("after");
         System.out.println(joinPoint.getTarget()+","+joinPoint.getClass()+","+joinPoint.getKind());
     }
+
+    /**
+     * 结果
+     * @param joinPoint
+     */
+    @AfterReturning(value = "funcationAspect()")
+    public void AfterReturningCut(JoinPoint joinPoint){
+        System.out.println("AfterReturning");
+        System.out.println(joinPoint.getTarget()+","+joinPoint.getClass()+","+joinPoint.getKind());
+    }
+
+    /**
+     * 异常
+     * @param joinPoint
+     * @param exception
+     */
+    @AfterThrowing(value = "funcationAspect()", throwing = "exception")
+    public void AfterThrowingCut(JoinPoint joinPoint, Throwable exception) {
+        System.out.println("AfterThrowing");
+        System.out.println(joinPoint.getTarget()+","+joinPoint.getClass()+","+joinPoint.getKind());
+    }
 }
